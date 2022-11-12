@@ -1,0 +1,10 @@
+{
+    "name": "Stone Box",
+    "value": "0",
+    "height": "100",
+    "width": "100",
+    "texture": "images/stone-box.jpg",
+    "mass": "90",
+    "restitution": "0",
+    "friction": "1"
+}

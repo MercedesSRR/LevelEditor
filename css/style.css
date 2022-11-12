@@ -1,0 +1,138 @@
+/*Copyright (c) 2022 Mercedes Senties*/
+
+
+/*General areas*/
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: VT323; 
+}
+
+body {
+    background-color:black;
+    color:white;
+    font-size: 24px;
+}
+
+header {
+    font-family: VT323; 
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+    color: #fdfdfd;
+    text-align: center;
+    font-family: VT323; 
+}
+
+/*Game area (editor)*/
+#game-area{
+    border-style: solid;
+    border-color: #fdfdfd;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.editor {
+    background-image: url('/images/background.jpg');
+    background-size: 100% 100%;
+    height: 720px;
+    width: 1280px;
+    position: relative;
+}
+
+/*Level info area*/
+#level-info-area {
+    height: 720px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border-style: solid;
+    border-color: #fdfdfd;
+    padding: 15px;
+}
+
+.input {
+    width: 97%;
+    background-color: #dbdbdb;
+}
+
+.button {
+    background: #b8b8b8be;
+    color: #080808;
+    padding: 0.1em;
+    margin-top: 40px;
+    margin-right: 68px;
+    text-align: center;
+    border-style: inset;
+    border-radius: 5px;
+    width: 97%;
+    user-select: none;
+}
+
+/*Object list area*/
+#object-list {
+    border-style: solid;
+    border-color: #fdfdfd;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 720px;
+    justify-content: space-evenly;
+}
+
+ul {
+    list-style-type: none;  
+}
+
+li {
+    margin-bottom: 10px;
+    margin-left: -40px;
+    margin-top: 40px;
+}
+
+/*Objects*/
+.wood-box {
+    background-image: url("../images/wood-box.png");
+    background-size: 100% 100%;
+    height: 100px;
+    width: 100px;
+}
+
+.metal-box {
+    background-image: url("../images/metal-box.png");
+    background-size: 100% 100%;
+    height: 100px;
+    width: 100px;
+}
+
+.stone-box {
+    background-image: url("../images/stone-box.jpg");
+    background-size: 100% 100%;
+    height: 100px;
+    width: 100px;
+}
+
+.cannon {
+    background-image: url("../images/cannon.png");
+    background-size: 100% 100%;
+    height: 100px;
+    width: 120px;
+}
+
+.bird {
+    background-image: url("../images/bird.png");
+    background-size: 100% 100%;
+    height: 50px;
+    width: 50px;
+}
+
+.box {
+    position: relative;
+    user-select: none;
+}
+
+

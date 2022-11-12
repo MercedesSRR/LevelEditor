@@ -1,0 +1,56 @@
+{
+    "level": {
+        "id":          0,
+        "name":        "Mercedes",
+        "maxShots": 15,
+        "oneStarScore": 1000,
+        "twoStarScore": 10000,
+        "threeStarScore": 50000,
+        "entities":    {
+            "collidables": [{
+                "id": 0,
+                "x": 671,
+                "y": 225,
+                "height": 100,
+                "width": 100,
+                "texture": "wood-box",
+                "bounce": 0,
+                "mass": 90,
+                "friction": 1
+            },{
+                "id": 0,
+                "x": 671,
+                "y": 225,
+                "height": 100,
+                "width": 100,
+                "texture": "metal-box",
+                "bounce": 0,
+                "mass": 90,
+                "friction": 1
+            },{
+                "id": 0,
+                "x": 671,
+                "y": 225,
+                "height": 100,
+                "width": 100,
+                "texture": "stone-box",
+                "bounce": 0,
+                "mass": 90,
+                "friction": 1
+            }],
+            "targets": [{
+                "wx": 480,
+                "wy": 301,
+                "height": 200,
+                "width": 30,
+                "value": 150
+            },{
+                "wx": 483,
+                "wy": 172,
+                "height": 200,
+                "width": 30,
+                "value": 100
+            }]
+        }
+    }
+}
