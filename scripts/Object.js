@@ -1,4 +1,5 @@
 //Copyright (c) 2022 Mercedes Senties
+'use strict';
 
 export default class Object {
     
@@ -14,7 +15,6 @@ export default class Object {
             friction: "1",
         };
         this.Drag();
-        $("#save-btn").on("click", event => this.SaveForm( event ));
     }
     
     Drag() {
@@ -32,88 +32,35 @@ export default class Object {
             gameObject.style.position = "relative";
         });
 
-        $("#edit-window").on("dragover", (event) => {
-            // prevent default to allow drop
-            event.preventDefault();
-        })
+        $("#edit-window")
+            .on("dragover", (event) => {
+                // prevent default to allow drop
+                event.preventDefault();
+            })
 
-        .on("drop", (event) => {
-            // prevent default action
-            event.preventDefault();
-            
-            dragArea = event.target;
+            .on("drop", (event) => {
+                // prevent default action
+                event.preventDefault();
+                
+                dragArea = event.target;
 
-            //clone object (lets you put more than 1 object of the same type)
-            let box = gameObject.cloneNode(true);
-            
-            // move box to the game window
-            event.target.appendChild(box);
-            
-            //set the style for the dragged item
-            box.style.left = (event.clientX - event.target.offsetLeft - x + 1) + 'px';
-            box.style.top = (event.clientY - event.target.offsetTop - y + 1) + 'px';
-            box.style.position = "absolute";
-            
-            //return to default so it stops cloning
-            dragArea = null;
-            
-        });
+                //clone object (lets you put more than 1 object of the same type)
+                let box = gameObject.cloneNode();
 
-    }
-
-    GetObjectEntities() {
-
-        const gameArea = $("#edit-window");
-
-        //store the informatin of the position of the gameArea relative to the viewport
-        let parentPos = gameArea.getBoundingClientRect();
-        let childPos;
-
-        //Get the data for every object placed on editor
-        let objectsPlaced = gameArea.children;
-        for (let i = 0; i < objectsPlaced.length; i++)
-        {
-            childPos = objectsPlaced[i].getBoundingClientRect()
-
-            collidables.push({
-                "id": objectsPlaced[i].classList[1],
-                "x" : childPos.left - parentPos.left,
-                "y" : childPos.top - parentPos.top,
-            });
-        }
-
-        let newData = {
-            "collidables" : collidables,
-        }
-        return newData
-    }
-
-    SaveForm(event) {
-        event.preventDefault();
-
-        const levelData = $("#level-info").serialize();
-
-        let entities = this.GetObjectEntities();
-
-        //level data to save
-        let data = {
-            id: id,
-            name: $("#name").value,
-            maxShots: $("#shots").value,
-            oneStarScore: $("#star1").value,
-            twoStarScore: $("#star2").value,
-            threeStarScore: $("#star3").value,
-            entities: entities,
-            payload: levelData
-
-        }
-
-        $.post(`/api/save`, data)
-        .then(response =>{
-            //handle the response
-            const respData = JSON.parse(response);
-            if(!respData.error)
-                console.log(`SUCCESS: Received ${respData.bytes} from the server`)
-        })
+                // move box to the game window
+                dragArea.appendChild(box);
+                
+                //set the style for the dragged item
+                box.style.left = (event.clientX - event.target.offsetLeft - x) + 'px';
+                box.style.top = (event.clientY - event.target.offsetTop - y) + 'px';
+                box.style.position = "absolute";
+                box.classList.add("placed");
+                //Set the draggable attribute to false so it stops cloning itself
+                box.setAttribute("draggable", false);
+                
+                //return to default so it stops cloning
+                dragArea = null;
+                
+            });           
     }
 }
