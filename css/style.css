@@ -10,6 +10,11 @@ main {
     font-family: VT323; 
 }
 
+#general-info {
+    display: flex;
+    flex-flow: column;
+}
+
 body {
     background-color:black;
     color:white;
@@ -46,9 +51,7 @@ footer {
 
 /*Level info area*/
 #level-info-area {
-    height: 720px;
-    display: flex;
-    flex-flow: row nowrap;
+    height: 560px;
     align-items: center;
     border-style: solid;
     border-color: #fdfdfd;
@@ -63,14 +66,40 @@ footer {
 .button {
     background: #b8b8b8be;
     color: #080808;
-    padding: 0.1em;
+    font-family: VT323; 
+    font-size: 24px;
+    padding: 15px;
     margin-top: 40px;
     margin-right: 68px;
     text-align: center;
     border-style: inset;
     border-radius: 5px;
-    width: 97%;
     user-select: none;
+    width: 90%;
+}
+
+/*Upload level area*/
+#upload-level-area {
+    height: 140px;
+    align-items: center;
+    margin-top: 20px;
+    border-style: solid;
+    border-color: #fdfdfd;
+    padding: 15px;
+}
+
+#submit-btn {
+    background: #b8b8b8be;
+    color: #080808;
+    font-family: VT323; 
+    font-size: 24px;
+    padding: 15px;
+    margin-right: 68px;
+    text-align: center;
+    border-style: inset;
+    border-radius: 5px;
+    user-select: none;
+    width: 100%;
 }
 
 /*Object list area*/

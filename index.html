@@ -15,23 +15,33 @@
         </header>
         <main>
 
-            <section id="level-info-area">
-                <form id="level-info" accept-charset="utf-8">
-                    Name:<br />
-                    <input type="text" name="name" value="Name" id="name" class="input name"/><br /><br />
-                    Max shots:
-                    <input type="text" name="shots" value="15" id="shots" class="input shots"/><br /><br />
-                    One Star Score:
-                    <input type="text" name="score-star1" value="1000" id="star1" class="input star1"/><br /><br />
-                    Two Star Score:
-                    <input type="text" name="score-star2" value="10000" id="star2" class="input star2"/><br /><br />
-                    Three Star Score:
-                    <input type="text" name="score-star3" value="50000" id="star3" class="input star3"/>
-
-                    <div id="save-level">
-                        <div id="save-btn" class="button">SAVE LEVEL</div>
-                    </div>
-                </form>
+            <section id="general-info">
+                <section id="level-info-area">
+                    <form id="level-info" accept-charset="utf-8">
+                        Name:<br />
+                        <input type="text" name="name" value="Name" id="name" class="input name"/><br /><br />
+                        Max shots:
+                        <input type="text" name="shots" value="15" id="shots" class="input shots"/><br /><br />
+                        One Star Score:
+                        <input type="text" name="score-star1" value="1000" id="star1" class="input star1"/><br /><br />
+                        Two Star Score:
+                        <input type="text" name="score-star2" value="10000" id="star2" class="input star2"/><br /><br />
+                        Three Star Score:
+                        <input type="text" name="score-star3" value="50000" id="star3" class="input star3"/>
+    
+                        <div id="save-level">
+                            <div id="save-btn" class="button">SAVE LEVEL</div>
+                        </div>
+                    </form>
+                </section>
+                
+                <section id="upload-level-area">
+                    <form>
+                        <label for="myfile">Select a level:</label>
+                        <input type="file" id="myfile" name="myfile"><br><br>
+                        <input id="submit-btn" type="submit" value="UPLOAD">
+                    </form>
+                </section>
             </section>
 
             <section id="game-area">
