@@ -1,6 +1,5 @@
 /*Copyright (c) 2022 Mercedes Senties*/
 
-
 /*General areas*/
 main {
     display: flex;
@@ -51,7 +50,7 @@ footer {
 
 /*Level info area*/
 #level-info-area {
-    height: 560px;
+    height: 540px;
     align-items: center;
     border-style: solid;
     border-color: #fdfdfd;
@@ -78,14 +77,8 @@ footer {
     width: 90%;
 }
 
-/*Upload level area*/
-#upload-level-area {
-    height: 140px;
-    align-items: center;
-    margin-top: 20px;
-    border-style: solid;
-    border-color: #fdfdfd;
-    padding: 15px;
+#level-list {
+    margin-bottom: 20px;
 }
 
 #submit-btn {
@@ -100,6 +93,7 @@ footer {
     border-radius: 5px;
     user-select: none;
     width: 100%;
+    margin-top: 20px;
 }
 
 /*Object list area*/

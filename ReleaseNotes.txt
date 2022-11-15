@@ -1,0 +1,28 @@
+# *** PG23 T2 JavaScript Web Apps  - Level Editor ***
+---------------------------------------
+Mercedes Senties
+Novemeber 14th, 2022
+
+This app is a client server application that allows the editing of levels for the game.
+
+
+## Synopsis
+---------------
+You can drag and drop the boxes, catapult and birds into the level editor, then you can save the level and access it again.
+
+
+# Download/Install
+---------------------------------------
+Download git repository:
+https://github.com/MercedesSRR/LevelEditor.git
+
+
+# *** How to use ***
+---------------------------------------
+Download the files into your computer, open them with Visual Studio Code and run it into localhost:4000 server 
+
+
+# *** Caveats *** (optional)
+---------------------------------------
+
+The saving of the level doesn’t work, so you cannot upload a saved level.

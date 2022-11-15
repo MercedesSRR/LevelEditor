@@ -1,4 +1,5 @@
 //Copyright (c) 2022 Mercedes Senties
+
 'use strict';
 
 export default class Object {

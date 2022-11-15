@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Editor</title>
+        <title>Level Editor</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=VT323" />
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -15,11 +15,12 @@
         </header>
         <main>
 
+            <!-- Level info -->
             <section id="general-info">
                 <section id="level-info-area">
                     <form id="level-info" accept-charset="utf-8">
-                        Name:<br />
-                        <input type="text" name="name" value="Name" id="name" class="input name"/><br /><br />
+                        <label class="name">Name:</label>
+                        <select id="level-list" name="level-name"></select><br />
                         Max shots:
                         <input type="text" name="shots" value="15" id="shots" class="input shots"/><br /><br />
                         One Star Score:
@@ -27,23 +28,18 @@
                         Two Star Score:
                         <input type="text" name="score-star2" value="10000" id="star2" class="input star2"/><br /><br />
                         Three Star Score:
-                        <input type="text" name="score-star3" value="50000" id="star3" class="input star3"/>
-    
+                        <input type="text" name="score-star3" value="50000" id="star3" class="input star3"/>   
+                        <!-- Save button -->
                         <div id="save-level">
                             <div id="save-btn" class="button">SAVE LEVEL</div>
                         </div>
-                    </form>
-                </section>
-                
-                <section id="upload-level-area">
-                    <form>
-                        <label for="myfile">Select a level:</label>
-                        <input type="file" id="myfile" name="myfile"><br><br>
+                        <!-- Upload button -->
                         <input id="submit-btn" type="submit" value="UPLOAD">
                     </form>
                 </section>
             </section>
 
+            <!-- Game area -->
             <section id="game-area">
                 <div id="edit-window" class="editor">
                     <!-- This area is generated programatically -->
@@ -53,7 +49,7 @@
                 </div>
             </section>
 
-
+            <!-- Objects list -->
             <section id="object-list">
                 <ul>
                     <li><div id="box-1" class="box metal-box" draggable="true"></div></li>

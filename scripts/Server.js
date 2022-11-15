@@ -13,6 +13,9 @@ import Express from 'express'
 import HTTP from 'http'
 import CORS from 'cors'
 
+//import Payload from './scripts/Result.js'
+import EditorAPI from './EditorAPI.js'
+
 const PORT = 4000;
 
 class Server {
@@ -37,17 +40,19 @@ class Server {
             .use( Express.json() )
             .use( Express.urlencoded({ extended: false }))
             .use( Express.static( Path.join(__dirname, './') ))
-            .use( CORS( corsOptions )).options('/*', this.corsHandler );
+            .use( CORS( corsOptions )).options('/*', this.corsHandler )
+            .use('/api', EditorAPI);
+            
+        // GET the editor page
+        this.api.get('/editor', ( request, response ) => {
+            response.sendFile(`${Path.join(__dirname, './')}/editor/editor.html`, { title: this.title });
+        });
 
         // GET index page
         this.api.get('/', ( request, response ) => {
             response.sendFile(`${Path.join(__dirname, './')}/index.html`, { title: this.title });
         });
 
-        // GET the editor page
-        this.api.get('/editor', ( request, response ) => {
-            response.sendFile(`${Path.join(__dirname, './')}/editor/editor.html`, { title: this.title });
-        });
 
         this.run();
     }

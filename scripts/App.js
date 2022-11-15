@@ -7,7 +7,7 @@ export default class App {
         $("#save-btn").on("click", event => this.SaveForm(event));
     }
 
-    GetObjectEntities() {
+    GetObjectAttr() {
 
         const gameArea = $("#edit-window");
         let gameObjects = $(".placed");
@@ -33,7 +33,7 @@ export default class App {
 
         const levelData = $("#level-info").serialize();
 
-        let entities = this.GetObjectEntities();
+        let entities = this.GetObjectAttr();
 
         //level data to save
         let data = {
@@ -55,5 +55,18 @@ export default class App {
             },
             body: JSON.stringify(data),
         });
+    }
+
+    //Scotts on save
+    onSave( event ) {
+        event.preventDefault();
+        let level = new LevelController( this.editor$ );
+        level.save()
+            .then( response => {
+                alert(`Level saved`)
+            })
+            .catch( response => {
+                alert('Level not saved')
+            })
     }
 }
