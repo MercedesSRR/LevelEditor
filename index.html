@@ -20,7 +20,11 @@
                 <section id="level-info-area">
                     <form id="level-info" accept-charset="utf-8">
                         <label class="name">Name:</label>
-                        <select id="level-list" name="level-name"></select><br />
+                        <input type="text" name="name" list="names" id="name" class="input">
+                        <select id="level-list" list="names" name="level-name"></select><br />
+                        <datalist id="names">
+                            <!--Level names-->
+                        </datalist>
                         Max shots:
                         <input type="text" name="shots" value="15" id="shots" class="input shots"/><br /><br />
                         One Star Score:

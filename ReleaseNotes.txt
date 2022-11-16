@@ -25,4 +25,4 @@ Download the files into your computer, open them with Visual Studio Code and run
 # *** Caveats *** (optional)
 ---------------------------------------
 
-The saving of the level doesn’t work, so you cannot upload a saved level.
+The saving of the level doesn’t work, so you cannot upload a saved level or access them.
